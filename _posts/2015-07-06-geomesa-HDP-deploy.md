@@ -298,7 +298,7 @@ hadoop-mapreduce-client-jobclient-2.6.0.jar [Download](http://central.maven.org/
 hadoop-mapreduce-client-shuffle-2.6.0.jar [Download](http://central.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.6.0/hadoop-mapreduce-client-shuffle-2.6.0.jar)
 
 ###### Thrift
-libthrift-0.9.1.jar[Download](https://search.maven.org/remotecontent?filepath=org/apache/thrift/libthrift/0.9.1/libthrift-0.9.1.jar)
+libthrift-0.9.1.jar [Download](https://search.maven.org/remotecontent?filepath=org/apache/thrift/libthrift/0.9.1/libthrift-0.9.1.jar)
 
 SCP all of these files into GeoServer's ```WEB-INF/lib``` directory
 
@@ -308,6 +308,7 @@ SCP all of these files into GeoServer's ```WEB-INF/lib``` directory
 Two pre-existing JARs must also be updated in the lib directory:
 
 commons-configuration: Accumulo requires commons-configuration 1.6 and previous versions should be replaced [Download](https://search.maven.org/remotecontent?filepath=commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar)
+
 commons-lang: GeoServer ships with commons-lang 2.1, but Accumulo requires replacing that with version 2.4 [Download](https://search.maven.org/remotecontent?filepath=commons-lang/commons-lang/2.4/commons-lang-2.4.jar)
 
 
