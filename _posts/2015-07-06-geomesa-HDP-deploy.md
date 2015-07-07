@@ -146,7 +146,7 @@ Find ```geomesa-1.1.0-rc.3-SNAPSHOT.jar``` in the GeoMesa build on local machine
 ```
 scp -P 2222 geomesa-assemble/target/geomesa-1.1.0-rc.3-SNAPSHOT-bin.tar.gz root@127.0.0.1:/usr/hdp/2.2.4.2-2/
 ```
-Tar the file to create a GeoMesa directory on the VM (e.g. /usr/hdp/2.2.4.2-2/geomesa-1.1.0-rc.3-SNAPSHOT) and set GeoMesa Home:
+Untar the file to create a GeoMesa directory on the VM (e.g. /usr/hdp/2.2.4.2-2/geomesa-1.1.0-rc.3-SNAPSHOT) and set GeoMesa Home:
 
 ```
 export GEOMESA_HOME=/usr/hdp/2.2.4.2-2/geomesa-1.1.0-rc.3-SNAPSHOT
