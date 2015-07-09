@@ -35,7 +35,7 @@ Right-click the image in VirtualBox and selet 'Start'
 
 <br>
 ##### Stage 1 Checkpoint
-  - Enter '127.0.0.1:8888' in browser and to be directed to the Hortnworks Sandbox registration page
+  - Enter '127.0.0.1:8888' in browser and to be directed to the Hortonworks Sandbox registration page
   - Enter 'localhost:50070/dfshealth.jsp' to view Hadoop NameNode status
 
 
@@ -71,10 +71,12 @@ export HADOOP_HOME=/usr/hdp/2.2.4.2-2/hadoop
 ```
 
 ##### 2.4
-Switch to the HDFS user and make an Accumulo data directory
+Switch to the HDFS user to make an Accumulo data directory and set appropriate permissions
 ```
 su hdfs
 hadoop fs -mkdir -p /apps/accumulo
+hadoop fs -chmod -R 700 /apps/accumulo
+hadoop fs -chown -R accumulo:accumulo /apps/accumulo
 ```
 Switch back to the root user ('su root')
 
@@ -103,15 +105,6 @@ Edit the following 5 files, located in ```$ACCUMULO_HOME/conf```, and replace "l
 - slaves
 
 ##### 2.8
-Change permissions and ownership of the Accumulo data directory:
-```
-su hdfs
-hadoop fs -chmod -R 700 /apps/accumulo
-hadoop fs -chown -R accumulo:accumulo /apps/accumulo
-```
-Switch back to the root user
-
-##### 2.9
 
 Initialize Accumulo:
 ```
@@ -146,7 +139,7 @@ Find ```geomesa-1.1.0-rc.3-SNAPSHOT.jar``` in the GeoMesa build on local machine
 ```
 scp -P 2222 geomesa-assemble/target/geomesa-1.1.0-rc.3-SNAPSHOT-bin.tar.gz root@127.0.0.1:/usr/hdp/2.2.4.2-2/
 ```
-Untar the file to create a GeoMesa directory on the VM (e.g. /usr/hdp/2.2.4.2-2/geomesa-1.1.0-rc.3-SNAPSHOT) and set GeoMesa Home:
+On the VM, untar the file to create a GeoMesa directory (e.g. /usr/hdp/2.2.4.2-2/geomesa-1.1.0-rc.3-SNAPSHOT) and set GEOMSA_HOME:
 
 ```
 export GEOMESA_HOME=/usr/hdp/2.2.4.2-2/geomesa-1.1.0-rc.3-SNAPSHOT
@@ -164,7 +157,7 @@ Install GPL software:
 ```
 bin/install-jai
 bin/install-jline
-bin/install vecmath
+bin/install-vecmath
 ```
 
 ##### 3.4
