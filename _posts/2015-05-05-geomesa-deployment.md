@@ -45,6 +45,10 @@ $ ls
 bin  dist  docs  lib  LICENSE.txt  README.md
 {% endhighlight %}
 
+### DEPLOY GEOMESA TO ACCUMULO
+
+The $GEOMESA_HOME/dist directory contains the distributed runtime jar that should be copied into the $ACCUMULO_HOME/lib/ext folder on each tablet server. This jar contains the GeoMesa Accumulo iterators that are necessary to query GeoMesa.
+
 ### INSTALL THE GEOMESA TOOLS
 
 GeoMesa comes with a set of command line tools for managing features. To complete the setup of the tools, cd into the bin directory and execute geomesa configure:
@@ -77,7 +81,7 @@ $ bin/install-jline
 $ bin/install-vecmath
 {% endhighlight %}
 
-Finally, test your installation:
+Next, edit the `test-geomesa` script and modify the initial variables to reflect your current deployment. Test your installation:
 
 {% highlight bash %}
 $ bin/test-geomesa
@@ -107,9 +111,6 @@ Usage: geomesa [command] [command options]
 
 For more information on the tools check out the  [GeoMesa Tools tutorial](/geomesa-tools-features/) after you're done with this tutorial
 
-### DEPLOY GEOMESA TO ACCUMULO
-
-The $GEOMESA_HOME/dist directory contains the distributed runtime jar that should be copied into the $ACCUMULO_HOME/lib/ext folder on each tablet server. This jar contains the GeoMesa Accumulo iterators that are necessary to query GeoMesa.
 
 {% highlight bash %}
 # something like this for each tablet server
