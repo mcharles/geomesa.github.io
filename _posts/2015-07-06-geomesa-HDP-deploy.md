@@ -131,7 +131,12 @@ scp -P 2222 local/file/path/filename root@127.0.0.1:vm/desired/filepath
 
 ##### 3.1
 
-On your local machine, clone the [GeoMesa github branch](https://github.com/locationtech/geomesa/tree/jnh_accumulo1.6) for Accumulo 1.6, and build using ```mvn clean install```
+On your local machine, clone the "jnh_accumulo1.6" [GeoMesa github branch](https://github.com/locationtech/geomesa/tree/jnh_accumulo1.6) and build 
+
+```
+git clone -b jnh_accumulo1.6 https://github.com/locationtech/geomesa.git
+mvn clean install
+```
 
 ##### 3.2
 
@@ -178,10 +183,10 @@ Run AccumuloQuickStart with the following command:
 java -cp ./geomesa-accumulo-quickstart-1.1.0-rc.3-SNAPSHOT.jar org.locationtech.geomesa.examples.AccumuloQuickStart -instanceId accumulo -zookeepers "localhost:2181" -user root -password secret -tableName VMtest
 {% endhighlight %}
 
-See [GeoMesa Quick Start](http://www.geomesa.org/geomesa-quickstart/) for more details on this step
+The QuickStart operates by inserting and then querying 1000 features. See "Insight into how the tutorial works" at [GeoMesa Quick Start](http://www.geomesa.org/geomesa-quickstart/) for more details.
 <br>
 ##### Stage 3 Checkpoint
-  - The above command should yield the output similar to:
+  - The QuickStart should yield the output similar to:
 
 {% highlight bash %}
 '''
