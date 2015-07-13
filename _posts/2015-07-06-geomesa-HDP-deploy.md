@@ -186,7 +186,7 @@ java -cp ./geomesa-accumulo-quickstart-1.1.0-rc.3-SNAPSHOT.jar org.locationtech.
 The QuickStart operates by inserting and then querying 1000 features. See "Insight into how the tutorial works" at [GeoMesa Quick Start](http://www.geomesa.org/geomesa-quickstart/) for more details.
 <br>
 ##### Stage 3 Checkpoint
-  - The QuickStart should yield the output similar to:
+  - The QuickStart should yield output similar to:
 
 {% highlight bash %}
 '''
